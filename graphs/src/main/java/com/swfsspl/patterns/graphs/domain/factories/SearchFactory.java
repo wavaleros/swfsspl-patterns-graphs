@@ -1,7 +1,7 @@
 package com.swfsspl.patterns.graphs.domain.factories;
 
-import com.swfsspl.patterns.graphs.domain.enums.SearchType;
 import com.swfsspl.patterns.graphs.domain.search.ISearch;
+import com.swfsspl.patterns.graphs.domain.search.SearchAlgorithms;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -9,13 +9,13 @@ import java.util.Map;
 
 @Component
 public class SearchFactory {
-    private static final Map<SearchType, ISearch> searchTypeMap = new HashMap<>();
+    private static final Map<SearchAlgorithms, ISearch> searchTypeMap = new HashMap<>();
 
-    public static void register(SearchType searchType, ISearch search) {
-        searchTypeMap.put(searchType, search);
+    public static void register(SearchAlgorithms searchAlgorithms, ISearch search) {
+        searchTypeMap.put(searchAlgorithms, search);
     }
 
-    public ISearch getByType(SearchType searchType) {
-        return searchTypeMap.get(searchType);
+    public ISearch getByType(SearchAlgorithms searchAlgorithms) {
+        return searchTypeMap.get(searchAlgorithms);
     }
 }

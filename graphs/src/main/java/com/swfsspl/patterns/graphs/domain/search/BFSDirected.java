@@ -6,14 +6,15 @@ import com.swfsspl.patterns.graphs.domain.graph.Graph;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DFS implements ISearch {
-    public DFS() {
-        SearchFactory.register(SearchAlgorithms.DFS, this);
+public class BFSDirected implements ISearch {
+    public BFSDirected() {
+        SearchFactory.register(SearchAlgorithms.BFSDirected, this);
     }
 
     @Override
     public boolean search(Graph graph) {
-        System.out.println(String.format("%s search result", SearchAlgorithms.DFS));
+        System.out.println(String.format("%s search result", SearchAlgorithms.BFSDirected));
         return false;
     }
 }
+

@@ -44,15 +44,15 @@ public class GraphFactory {
         } else if (GraphType.UNDIRECTED == this.appConfig.getGraphType()) {
             if (WeightType.WEIGHTED == this.appConfig.getWeightType()) {
                 if (SearchType.BFS == this.appConfig.getSearchType()) {
-                    graph = new UndirectedGraph(name, searchFactory.getByType(SearchAlgorithms.BFS));
-                } else if (SearchType.DFS == this.appConfig.getSearchType()) {
-                    graph = new UndirectedGraph(name, searchFactory.getByType(SearchAlgorithms.DFS));
-                }
-            } else if (WeightType.UNWEIGHTED == this.appConfig.getWeightType()) {
-                if (SearchType.BFS == this.appConfig.getSearchType()) {
                     graph = new UndirectedWeightedGraph(name, searchFactory.getByType(SearchAlgorithms.BFS));
                 } else if (SearchType.DFS == this.appConfig.getSearchType()) {
                     graph = new UndirectedWeightedGraph(name, searchFactory.getByType(SearchAlgorithms.DFS));
+                }
+            } else if (WeightType.UNWEIGHTED == this.appConfig.getWeightType()) {
+                if (SearchType.BFS == this.appConfig.getSearchType()) {
+                    graph = new UndirectedGraph(name, searchFactory.getByType(SearchAlgorithms.BFS));
+                } else if (SearchType.DFS == this.appConfig.getSearchType()) {
+                    graph = new UndirectedGraph(name, searchFactory.getByType(SearchAlgorithms.DFS));
                 }
             }
         }

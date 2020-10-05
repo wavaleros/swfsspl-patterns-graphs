@@ -3,6 +3,7 @@ package com.swfsspl.patterns.graphs.domain.graph;
 import com.swfsspl.patterns.graphs.domain.Arcs;
 import com.swfsspl.patterns.graphs.domain.Node;
 import com.swfsspl.patterns.graphs.domain.search.ISearch;
+import lombok.Getter;
 import lombok.ToString;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-
+@Getter
 @ToString
 public abstract class Graph {
     protected String name;
@@ -46,7 +47,11 @@ public abstract class Graph {
     }
 
 
-    public abstract void addArc(String originNode, String destinationNode);
+    public void addArc(String originNode, String destinationNode) {
+        System.out.println("Unsupported operation for nodes : " + originNode + " - " + destinationNode);
+    }
 
-    public abstract void addArc(String originNode, String destinationNode, int weight);
+    public void addArc(String originNode, String destinationNode, int weight) {
+        System.out.println("Unsupported operation for nodes : " + originNode + " - " + destinationNode + "with weight: " + weight);
+    }
 }

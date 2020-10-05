@@ -9,10 +9,6 @@ public class DirectedWeightedGraph extends Graph {
         super(name, search);
     }
 
-    @Override
-    public void addArc(String originNode, String destinationNode) {
-        throw new RuntimeException("Unsupported Operation");
-    }
 
     @Override
     public void addArc(String originNode, String destinationNode, int weight) {

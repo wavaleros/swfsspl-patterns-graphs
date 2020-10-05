@@ -21,11 +21,17 @@ public class StartUp implements ApplicationListener<ApplicationReadyEvent> {
 
     @Override
     public void onApplicationEvent(final ApplicationReadyEvent event) {
-        System.out.println(this.appConfig.toString());
+        System.out.println("Loaded config : " + this.appConfig.toString());
         Graph g = this.graphFactory.getGraphWithName("Graph1");
+        System.out.println("Adding Nodes....");
         g.addNode("A");
         g.addNode("B");
         g.addNode("C");
+        System.out.println("Adding Arcs....");
+        g.addArc("A", "B");
+        g.addArc("B", "C", 2);
+        System.out.println("\nNodes: " + g.getNodes());
+        System.out.println("\nArcs" + g.getArcs());
         g.searchRoute("A", "B");
     }
 }

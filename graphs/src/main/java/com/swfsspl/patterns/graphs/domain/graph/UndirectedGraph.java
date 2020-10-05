@@ -19,9 +19,4 @@ public class UndirectedGraph extends Graph {
         this.arcs.add(new Arcs(0, a, b));
         this.arcs.add(new Arcs(0, b, a));
     }
-
-    @Override
-    public void addArc(String originNode, String destinationNode, int weight) {
-        throw new RuntimeException("Unsupported Operation");
-    }
 }
